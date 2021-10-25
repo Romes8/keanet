@@ -6,33 +6,23 @@
 </head>
 
 <body>
-<div class="container-small">
-    <h1>keaNet</h1>
+<div class="center">
+    <h1 class="header">keaNet</h1>
 
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-        <label class="form-check-label" for="flexCheckChecked">
-        Internet connection
-        </label>
+    <div>
+        <input  type="checkbox" value="" id="flexCheckChecked" >
+        <label class="text-def"> Internet connection </label>
     </div>
 
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Phone lines</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="1">4</option>
-        <option value="2">5</option>
-        <option value="3">6</option>
-        
-    </select>
+    Phone lines <input type="number" min="0" max="6" value="0"></input>
 
-    <h2>Cell phones: </h2>
+
+    <h2 class="text-def">Cell phones: </h2>
 
     <div class="container-sm">
         <div class="row">
             <div class="col">
-                <select class="form-select" size="3" aria-label="size 3 select example">
+                <select multiple = "multiple">
                     <option value="1">Samsung S10</option>
                     <option value="2">iPhone 12</option>
                     <option value="3">Xiaomi</option>
@@ -43,28 +33,20 @@
             </div>
             <div class="col">
                 <div class="row">
-                    <button type="button" class="btn btn-primary"><</button>
-                    <br>
-                    
-                    </br>
-                    <button type="button" class="btn btn-primary">></button>
+                    <button type="button"><</button>
+                    <button type="button">></button>
                 </div>
             </div>
             <div class="col">
-                <select class="form-select" size="3" aria-label="size 3 select example">
-                    <option value="1">Samsung S10</option>
-                    <option value="2">iPhone 12</option>
-                    <option value="3">Xiaomi</option>
-                    <option value="1">Huawai 10</option>
-                    <option value="2">Nokia 3310</option>
-                    <option value="3">Google phone</option>
+                <select multiple = "multiple" style="width: 120px; height: 100px;">
+                   
                 </select>
             </div>
         </div>
       </div>
-    <h2>Total price: </h2>
+    <h2 class="text-def" >Total price: </h2>
 
-    <button type="button" class="btn btn-primary">BUY</button>
+    <button type="button">BUY</button>
 </div>
 
 </body>
@@ -72,11 +54,23 @@
 <style>
     .container-small {
 
-        position: center;
+        position: absolute;
         width: 350px;
-        border-color: black;
-        border-width: 4px;
-        border-radius: 5px;
         border: 3px;
+    }
+
+    .center {
+       
+        width: 30%;
+        border: 5px solid black;
+        padding: 10px;
+        }
+
+    .text-def {
+        font-size: 15px;
+    }
+
+    .header {
+        font-size: 25px;
     }
 </style>
