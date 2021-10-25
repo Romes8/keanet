@@ -1,12 +1,12 @@
 def_val = 0;
+var price = 0;
 
 class Purchase {
 
     internetConnection;
     phoneLines;
     cellPhones;
-    price = 0;
-    
+
     phones = {
         'Motorola G99': 800,
         'iPhone 99': 6000,
@@ -24,7 +24,7 @@ class Purchase {
     //internet checkbox
     internet() {
 
-        chkBox = document.getElementById('internet_checkbox');
+        var chkBox = document.getElementById('internet_checkbox');
 
         if(chkBox.checked)
         {
@@ -47,16 +47,16 @@ class Purchase {
         var phone_line_price = 150;
 
         var val = document.getElementById('phone_lines').value;
-        alert("Def: " + def_val + "  ||   Cur: " + val);
+        //alert("Def: " + def_val + "  ||   Cur: " + val);
 
         if(def_val > val)
         {
-            price = price - phone_line_price;
+            price =  price - phone_line_price;
             def_val = val;
         }
         else 
         {
-            price = price + phone_line_price;
+            price =  price + phone_line_price;
             def_val = val;
         }
 
@@ -64,10 +64,7 @@ class Purchase {
     }
 
 
-    price_text() {  
-        document.getElementById('price_text').innerHTML = price + "DKK";  
-    }
-
+ 
     //select a cell phone
     select_phone(selectedName)
     {
@@ -86,25 +83,8 @@ class Purchase {
 
 pur = new Purchase();
 
-function _phone_lines() {
-    
-    var phone_line_price = 150;
-
-    val = document.getElementById('phone_lines').value;
-    alert("Def: " + def_val + "  ||   Cur: " + val);
-
-    if(def_val > val)
-    {
-        price = price - phone_line_price;
-        def_val = val;
-    }
-    else 
-    {
-        price = price + phone_line_price;
-        def_val = val;
-    }
-
-    price_text();
+function price_text() {  
+    document.getElementById('price_text').innerHTML = price + "DKK";  
 }
 
 
