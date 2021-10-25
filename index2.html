@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <h1><b>KEANet</b></h1>
+    <style>
+    select {
+        width: 150px;
+        height: 100px;
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { opacity: 1;}
+</style>
+</head>
+<body>
+    <form>
+        <input type="checkbox" id="internet" name="internet">
+        <label for="internet">Internet connection</label><br>
+        Phone lines <input type="number" min="0" max="8"><br>
+        Cell phones:<br>
+        <table>
+            <td>
+                <select id="s1" multiple="multiple">
+                    <option value="1">Motorola G99</option>
+                    <option value="2">iPhone 99</option>
+                    <option value="3">Samsung Galaxy 99</option>
+                    <option value="4">Sony Xperia 99</option>
+                    <option value="5">Huawei 99</option>
+                </select>
+            </td>
+            <td>
+                <div><input type="button" id="right" value=">"/></div>
+                <div><input type="button" id="left" value="<"/></div>
+            </td>
+            <td>
+                <select id="s2" multiple="multiple">
+                </select><br>
+            </td>
+        </table>
+        Total price: 0 DKK <br>
+        <input type="button" value="Buy"/>
+    </form>
+</body>
+</html>
