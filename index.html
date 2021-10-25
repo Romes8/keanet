@@ -10,11 +10,11 @@
     <h1 class="header">KEANet</h1>
 
     <div>
-        <input  type="checkbox" id="internet_checkbox" name="internet_checkbox" onclick="internet()" >
+        <input  type="checkbox" id="internet_checkbox" name="internet_checkbox" onclick="pur.internet()" >
         <label class="text-def"> Internet connection </label>
     </div>
 
-    Phone lines <input type="number" id="phone_lines"  min="0" max="8" value="0" onchange="phone_lines()"></input>
+    Phone lines <input type="number" id="phone_lines"  min="0" max="8" value="0" onchange="pur.phone_lines()"></input>
 
 
     <h2 class="text-def">Cell phones: </h2>
@@ -46,7 +46,7 @@
       </div>
     <h2 class="text-def" >Total price: <b id="price_text"></b> </h2>
 
-    <button type="button" onclick="buy_pressed()">BUY</button>
+    <button type="button" onclick="pur.buy_pressed()">BUY</button>
 </div>
 
 </body>
