@@ -2,55 +2,97 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
  <title>KEANet</title>
-
- <script type="text/javascript" src="methods.js"></script>
+    <script type="text/javascript" src="methods2.js"></script>
 
 </head>
 <body class="border">
 
     <h1><b>KEANet</b></h1>
     <form>
-        <input type="checkbox" id="internet" name="internet">
+        <input type="checkbox" id="internet" name="internet" onclick="get_internet()">
         <label for="internet">Internet connection</label><br>
-        Phone lines <input type="number" min="0" max="8"><br>
+        Phone lines <input type="number" id="phoneLines" min="0" max="8" onchange="get_phoneLines()"><br>
         Cell phones:<br>
         <table>
             <td>
                 <select id="s1" multiple="multiple">
                     <option value="1">Motorola G99</option>
                     <option value="2">iPhone 99</option>
-                    <option value="3">Samsung Galaxy 99</option>
-                    <option value="4">Sony Xperia 99</option>
-                    <option value="5">Huawei 99</option>
+                    <option value="Samsung Galaxy 99">Samsung Galaxy 99</option>
+                    <option value="Sony Xperia 99">Sony Xperia 99</option>
+                    <option value="Huawei 99">Huawei 99</option>
                 </select>
             </td>
             <td>
-                <div><input type="button" id="right" value=">"/></div>
-                <div><input type="button" id="left" value="<"/></div>
+                <div><input type="button" id="right" onclick="selectOpt()" value=">"/></div>
+                <div><input type="button" id="left" onclick="deselectOpt()" value="<"/></div>
             </td>
             <td>
                 <select id="s2" multiple="multiple">
                 </select><br>
             </td>
         </table>
-        Total price: 0 DKK <br>
-        <input type="button" value="Buy"/>
+        Total price: <text id="price" ></text>  DKK <br>
+        <input type="button" value="Buy" onclick="pur.buy()"/>
     </form>
 </body>
 </html>
 
-function select()
+<script>
+
+    var firstBox = document.getElementById("s1");
+    var secondBox = document.getElementById("s2");
+    var internet = document.getElementById("internet");
+    var phoneLines = document.getElementById("phoneLines").value;
+
+    function get_internet()
     {
-        var e = document.getElementById("s1").value;
-        console.log(e);
-        //select_phone(e);
-    };
-    function deselect()
+        if (internet.checked) price = pur.internet(true)
+        else price = pur.internet(false);
+        change_price(price);
+    }
+
+    function selectOpt()
     {
-        var e = document.getElementById("s2").value;
-        console.log(e);
-        //deselect_phone(e);
+        var e = firstBox.options[firstBox.selectedIndex].text;
+        var option = document.createElement("option")
+        option.text = e;
+        secondBox.appendChild(option);
+        price = pur.select_phone(e);
+        change_price(price);
     };
+
+    function deselectOpt()
+    {
+        var f = secondBox.options[secondBox.selectedIndex].text;
+        secondBox.remove(secondBox.selectedIndex);
+        var option = document.createElement("option")
+        option.text = f;
+        var price = pur.deselect_phone(f);
+        change_price(price);
+    };
+
+    function get_phoneLines()
+    {
+        var newValue = document.getElementById("phoneLines").value;
+        if (newValue > phoneLines)
+        {
+            var price = pur.increment_phoneLines();
+        }
+        else
+        {
+            var price = pur.decrement_phoneLines();
+        }
+        phoneLines = newValue;
+        change_price(price);
+    }
+
+    function change_price(price)
+    {
+        document.getElementById("price").innerHTML = price;
+    };
+
+</script>
 
 <style>
 
