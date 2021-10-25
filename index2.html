@@ -1,17 +1,14 @@
 <!DOCTYPE>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <h1><b>KEANet</b></h1>
-    <style>
-    select {
-        width: 150px;
-        height: 100px;
-    }
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button { opacity: 1;}
-</style>
+ <title>KEANet</title>
+
+ <script type="text/javascript" src="methods.js"></script>
+
 </head>
-<body>
+<body class="border">
+
+    <h1><b>KEANet</b></h1>
     <form>
         <input type="checkbox" id="internet" name="internet">
         <label for="internet">Internet connection</label><br>
@@ -41,3 +38,20 @@
     </form>
 </body>
 </html>
+
+<style>
+
+    .border {
+        width: 30%;
+        height: 43%;
+        border: 5px solid black;
+        padding: 10px;
+    }
+
+    select {
+        width: 150px;
+        height: 100px;
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { opacity: 1;}
+</style>
