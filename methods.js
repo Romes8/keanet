@@ -83,6 +83,7 @@ class Purchase {
 
 pur = new Purchase();
 
+
 function price_text() {  
     document.getElementById('price_text').innerHTML = price + "DKK";  
 }
